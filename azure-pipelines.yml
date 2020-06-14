@@ -1,0 +1,18 @@
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: ccdc-3rd-party/conan-azure-devops
+      ref: refs/heads/development
+
+extends:
+  template: third-party-library-all-platforms-from-conan-center.yml@templates
+  parameters:
+    package: nasm
+    package_version: 2.14
+    source_repository: public-conan-center
+    destination_repository: ccdc-3rdparty-conan
+    build_types:
+      - Release
+    platforms:
+      - win2019_vs2019
